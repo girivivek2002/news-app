@@ -3,13 +3,15 @@ import NewsItems from "./NewsItems.jsx"
 
 
 
+
 const NewsBoard = ({ category }) => {
 
 
     const [article, setArticle] = useState([])
 
     useEffect(() => {
-        const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=5418bb88c43946c19a38f552531def57`
+        const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
+
         fetch(url).then(response => response.json()).then(data => setArticle(data.articles))
 
     }, [category])
