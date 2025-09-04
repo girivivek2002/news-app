@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import NewsItems from "./NewsItems"
+import NewsItems from "./NewsItems.jsx"
 
 
 
